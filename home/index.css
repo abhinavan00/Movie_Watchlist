@@ -89,6 +89,10 @@ input {
 /* ============
         MAIN
 =============== */
+
+/* ===================
+    INITIAL STATE
+====================== */
 main {
     position: relative;
     height: 65vh;
