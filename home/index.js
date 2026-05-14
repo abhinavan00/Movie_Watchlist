@@ -1,8 +1,15 @@
-const searchBtn = document.getElementById('search-btn')
 const searchInput = document.getElementById('search-input')
 const movieListContainer = document.getElementById('movie-list-container')
 
-searchBtn.addEventListener('click', async function() {
+document.addEventListener('click', function(e) {
+    if(e.target.id === 'search-btn') {
+        fetchMovie()
+    } else if (e.target.id === 'watchlist-btn') {
+        addMovieToWatchlist(e.target.dataset)
+    }
+})
+
+async function fetchMovie() {
     try {
         const res = await fetch(`http://www.omdbapi.com/?apikey=2825a6ba&s=${searchInput.value}`)
         const data = await res.json()
@@ -22,7 +29,16 @@ searchBtn.addEventListener('click', async function() {
                                     <div class="movie-detail">
                                         <p>${imdbData.Runtime}</p>
                                         <p>${imdbData.Genre}</p>
-                                        <button class="watchlist-btn">
+                                        <button 
+                                            class="watchlist-btn" 
+                                            id='watchlist-btn'
+                                            data-poster='${imdbData.Poster}'
+                                            data-title='${imdbData.Title}'
+                                            data-rating='${imdbData.imdbRating}'
+                                            data-runtime='${imdbData.Runtime}'
+                                            data-genre='${imdbData.Genre}'
+                                            data-plot='${imdbData.Plot}'
+                                        >
                                             <img src="../images/plus-icon.svg" alt="plus icon">
                                             Watchlist
                                         </button>
@@ -50,4 +66,20 @@ searchBtn.addEventListener('click', async function() {
     }
 
         
-})
+}
+
+function addMovieToWatchlist(dataSet) {
+    const movie = {
+        Poster: dataSet.poster,
+        Title: dataSet.title,
+        Rating: dataSet.rating,
+        Runtime: dataSet.runtime,
+        Genre: dataSet.genre,
+        Plot: dataSet.plot
+    }
+
+    const watchlist = []
+    watchlist.unshift(movie)
+
+    console.log(watchlist)
+}
