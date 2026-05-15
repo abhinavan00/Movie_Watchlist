@@ -81,6 +81,8 @@ function addMovieToWatchlist(dataSet) {
     }
 
     list.unshift(movie)
-
+    console.log(list)
+    
     localStorage.setItem('MovieList', JSON.stringify(list))
+    alert('Movie added to your watchlist!')
 }

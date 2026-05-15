@@ -142,7 +142,7 @@ hr {
     margin: 0;
 }
 
-.watchlist-btn {
+.remove-btn {
     align-items: center;
     gap: 0.5em;
     font-family: inherit;
@@ -152,7 +152,7 @@ hr {
     cursor: pointer;
 }
 
-.watchlist-btn:hover {
+.remove-btn:hover {
     text-decoration: underline;
 }
 
