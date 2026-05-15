@@ -78,7 +78,7 @@ function addMovieToWatchlist(dataSet) {
         Plot: dataSet.plot
     }
 
-    const movieList = JSON.parse(localStorage.getItem('MovieList'))
+    let movieList = JSON.parse(localStorage.getItem('MovieList')) || []
 
     movieList.unshift(movie)
 

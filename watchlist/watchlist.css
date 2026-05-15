@@ -87,7 +87,7 @@ main {
         MOVIE SECTION
 ======================== */
 
-/* --------- SECTION ---------- */
+/* --------- SECTION DIV ---------- */
 .movie-list-container {
     /* display: none; */
     width: 80%;
@@ -97,7 +97,6 @@ main {
 
 /*------ MOVIE CARD -------*/
 
-/* FLEX CONTAINERS */
 .movie-card {
     gap: 2em;
 }
@@ -106,7 +105,7 @@ hr {
     margin: 1.5em 0;
 }
 
-.movie-card, .movie-header, .movie-detail, .watchlist-btn {
+.movie-card, .movie-header, .movie-detail, .remove-btn {
     display: flex;
 }
 
@@ -116,7 +115,7 @@ hr {
 }
 
 /* TYPOGRAPHY */
-.movie-header .rating, .movie-detail p, .watchlist-btn {
+.movie-header .rating, .movie-detail p, .remove-btn {
     font-size: 0.85rem;
     color: #111827;
 }
@@ -192,7 +191,7 @@ hr {
     }
 
     /* TYPOGRAPHY */
-    .movie-header .rating, .movie-detail p, .watchlist-btn {
+    .movie-header .rating, .movie-detail p, .remove-btn {
         font-size: 1rem;
     }
 
