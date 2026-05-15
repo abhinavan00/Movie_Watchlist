@@ -1,5 +1,3 @@
-import { list } from "../watchlist/list.js"
-
 const searchInput = document.getElementById('search-input')
 const movieListContainer = document.getElementById('movie-list-container')
 
@@ -80,9 +78,11 @@ function addMovieToWatchlist(dataSet) {
         Plot: dataSet.plot
     }
 
-    list.unshift(movie)
-    console.log(list)
+    const movieList = JSON.parse(localStorage.getItem('MovieList'))
+
+    movieList.unshift(movie)
+
+    localStorage.setItem('MovieList', JSON.stringify(movieList))
     
-    localStorage.setItem('MovieList', JSON.stringify(list))
     alert('Movie added to your watchlist!')
 }

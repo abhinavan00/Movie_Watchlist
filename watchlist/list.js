@@ -1,1 +1,3 @@
-export const list = []
+const list = []
+
+localStorage.setItem('MovieList', JSON.stringify(list))

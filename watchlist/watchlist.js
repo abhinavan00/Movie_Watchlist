@@ -1,6 +1,3 @@
-// IMPORT MOVIE LIST
-import { list } from "./list.js";
-
 // MOVIE LIST ARRAY LOCAL STORAGE 
 const movieList = JSON.parse(localStorage.getItem('MovieList'))
 
