@@ -38,6 +38,7 @@ async function fetchMovie() {
                                             data-runtime='${imdbData.Runtime}'
                                             data-genre='${imdbData.Genre}'
                                             data-plot='${imdbData.Plot}'
+                                            data-id ='${imdbData.imdbID}'
                                         >
                                             <img src="../images/plus-icon.svg" alt="plus icon">
                                             Watchlist
@@ -75,7 +76,8 @@ function addMovieToWatchlist(dataSet) {
         Rating: dataSet.rating,
         Runtime: dataSet.runtime,
         Genre: dataSet.genre,
-        Plot: dataSet.plot
+        Plot: dataSet.plot,
+        Id: dataSet.id
     }
 
     let movieList = JSON.parse(localStorage.getItem('MovieList')) || []

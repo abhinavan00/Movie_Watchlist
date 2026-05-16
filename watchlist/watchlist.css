@@ -89,7 +89,7 @@ main {
 
 /* --------- SECTION DIV ---------- */
 .movie-list-container {
-    /* display: none; */
+    display: none;
     width: 80%;
     max-width: 1000px;
     margin: 4em auto;
