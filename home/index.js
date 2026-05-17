@@ -1,5 +1,6 @@
 const searchInput = document.getElementById('search-input')
 const movieListContainer = document.getElementById('movie-list-container')
+const homeInitialState = document.getElementById('home-initial-state')
 
 document.addEventListener('click', function(e) {
     if(e.target.id === 'search-btn') {
@@ -55,6 +56,8 @@ async function fetchMovie() {
                 })
 
                 const html = await Promise.all(htmlData)
+                homeInitialState.style.display = 'none'
+                movieListContainer.style.display = 'block'
                 movieListContainer.innerHTML = html
 
         } catch(err) {
