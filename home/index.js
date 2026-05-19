@@ -84,6 +84,7 @@ async function fetchMovie() {
 
     } catch(err) {
         homeInitialState.innerHTML = `
+            <i class="fa-solid fa-circle-exclamation fa-2xl"></i>
             <p>Movie not found!</p>
         `
     }
