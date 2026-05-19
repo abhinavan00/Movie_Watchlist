@@ -12,6 +12,13 @@ document.addEventListener('click', function(e) {
 
 async function fetchMovie() {
     try {
+        movieListContainer.style.display = 'none'
+        homeInitialState.style.display = 'flex'
+        homeInitialState.innerHTML = `
+            <i class="fa-solid fa-circle-notch fa-spin fa-2xl"></i>
+            <p>Loading</p>
+        `
+
         const res = await fetch(`http://www.omdbapi.com/?apikey=2825a6ba&s=${searchInput.value}`)
         const data = await res.json()
 
@@ -63,6 +70,7 @@ async function fetchMovie() {
                     movieListContainer.style.display = 'block'
                     movieListContainer.innerHTML = html
                     searchInput.value = ''
+
     
             } catch(err) {
                 console.log('Some Error Found during the fetch!')
